@@ -5,9 +5,12 @@ body {
 header {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     border-style: solid;
     padding: 1rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 #canvas-container {
@@ -19,4 +22,22 @@ header {
     width: 500px; /* Width and height have to be fixed here because the canvas
     needs to stay the same height */
     height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.cell {
+    border-style: solid;
+    border-width: 0px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 3rem;
+    font-weight: bold;
+    background: white;
+}
+
+.cell:hover {
+    background: black;
 }

@@ -1,0 +1,22 @@
+body {
+    background: radial-gradient(circle at 50% 50%, #e5f2bb, #e6ebad, #e9e39f, #ecdb92, #f0d286, #f5c97b, #fabf72, #ffb56b);
+}
+
+header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    border-style: solid;
+    padding: 1rem;
+}
+
+#canvas-container {
+    border-style: solid;
+    border-width: 2px;
+    border-top: none;
+    display: flex;
+    margin: auto;
+    width: 500px; /* Width and height have to be fixed here because the canvas
+    needs to stay the same height */
+    height: 500px;
+}

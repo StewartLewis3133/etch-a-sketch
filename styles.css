@@ -1,10 +1,19 @@
 body {
-    background: radial-gradient(circle at 50% 50%, #e5f2bb, #e6ebad, #e9e39f, #ecdb92, #f0d286, #f5c97b, #fabf72, #ffb56b);
+    background: radial-gradient(circle at 50% 50%, #e5f2bb,
+     #e6ebad, #e9e39f, #ecdb92, #f0d286, #f5c97b, #fabf72, #ffb56b);
 }
 
-header {
+header { 
+    /* Text Style */
     text-align: center;
-    color: rgb(90, 59, 59); font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+    color: rgb(0, 0, 0); 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 50px; font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+
+    /* Position Style */
     border-style: solid;
     padding: 1rem;
     border-top: none;
@@ -12,7 +21,7 @@ header {
     border-right: none;
 }
 
-#canvas-container {
+#canvas-container {  
     border-style: solid;
     border-width: 2px;
     border-top: none;
@@ -21,6 +30,8 @@ header {
     width: 500px; /* Width and height have to be fixed here because the canvas
     needs to stay the same height */
     height: 500px;
+
+    /* Grid Style */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -28,12 +39,7 @@ header {
 
 .cell-new {
     border-style: solid;
-    border-width: 0px;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial;
-    font-size: 3rem;
-    font-weight: bold;
+    border-width: 1px;
     background: white;
 }
 
@@ -46,11 +52,18 @@ header {
 }
 
 .button {
+    /* Position Style */
     align-items: center;
     justify-content: center;
     justify-self: center;
 
-    color: rgb(90, 59, 59); font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+    /* Text Style */
+    color: rgb(90, 59, 59); 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 20px; font-weight: bold; 
+    letter-spacing: 0px; 
+    line-height: 1; 
+    text-align: center;
 }
 
 #button-rack {

@@ -25,8 +25,10 @@ function initializeCanvas(canvasSize) {
 
 //Switches the class of 'mouseenter'ed divs from cell-new to cell-drawn (changes color)
 function draw(cell) {
-    cell.target.classList.add('cell-drawn')
-    cell.target.classList.remove('cell-new');
+    let randomColorCode = getRandomColorCode();
+    cell.target.style.backgroundColor = `#${randomColorCode}`;
+    //cell.target.classList.add('cell-drawn')
+    //cell.target.classList.remove('cell-new');
 }
 
 const resetButton = document.querySelector('#reset-button')
@@ -39,10 +41,20 @@ function resetCanvas() {
     initializeCanvas(userInputSize());
 }
 
+//Does what it says haha
+function getRandomColorCode () {
+    return Math.floor(Math.random()*16777215).toString(16);
+}
+
 //Integer Checker!
 function isInteger(value) {
     var x = parseFloat(value);
     return !isNaN(value) && (x | 0) === x;
+  }
+
+//Random positive integer generator
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
   }
 
 //Prompts user to decide canvas edge size

@@ -3,16 +3,15 @@
 const canvasContainerDiv = document.querySelector('#canvas-container');
 //With parameter the square root of canvasSize, initializes the canvas
 function initializeCanvas(canvasSize) {
-    let canvasSizeRoot = Math.sqrt(canvasSize);
 
     //These two initialize the size of the grid
-    canvasContainerDiv.style.gridTemplateColumns = `repeat(${canvasSizeRoot}, 
+    canvasContainerDiv.style.gridTemplateColumns = `repeat(${canvasSize}, 
         1fr)`;
-    canvasContainerDiv.style.gridTemplateRows = `repeat(${canvasSizeRoot}, 
+    canvasContainerDiv.style.gridTemplateRows = `repeat(${canvasSize}, 
         1fr)`;
     
     //Creates the divs in the canvas-container and adds classes and id's
-    for (let i = 0; i < canvasSize; i++) {
+    for (let i = 0; i < canvasSize * canvasSize; i++) {
         let currentCell = document.createElement('div');
         currentCell.id = `${i + 1}`;
         currentCell.className = "cell-new";
@@ -37,21 +36,25 @@ resetButton.addEventListener('click', resetCanvas);
 function resetCanvas() {
     const canvasListClear = document.querySelector('#canvas-container');
     canvasListClear.innerHTML = '';
-    initializeCanvas(16);
+    initializeCanvas(userInputSize());
 }
+
+//Integer Checker!
+function isInteger(value) {
+    var x = parseFloat(value);
+    return !isNaN(value) && (x | 0) === x;
+  }
 
 //Prompts user to decide canvas edge size
 //Does not accept strings or integers over 100
 function userInputSize() {
     let userCanvasSize = prompt('How many squares would you like per side?');
-    console.log(userCanvasSize.typeof);
-    if (userCanvasSize.isInteger == false) {
+    if (isInteger(userCanvasSize) && userCanvasSize <= 64 && userCanvasSize !== null) {
+        return userCanvasSize;
+    } else {
+        alert('Make sure that your input is a number and less than 100');
         return userInputSize();
-    } else if (userCanvasSize > 100) {
-        userCanvasSize = prompt('Make it is less than 100! How many squares?');
     }
-
-    return userCanvasSize;
 }
 
 //First initialization

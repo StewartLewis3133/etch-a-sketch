@@ -25,9 +25,15 @@ function initializeCanvas(canvasSize) {
 
 //Switches the class of 'mouseenter'ed divs from cell-new to cell-drawn (changes color)
 function draw(cell) {
+    //TINT DRAW//
+    //Working on it:)//
+    
+    //RAINBOW DRAW//
     let randomColorCode = getRandomColorCode();
     cell.target.style.backgroundColor = `#${randomColorCode}`;
-    //cell.target.classList.add('cell-drawn')
+
+    //REGULAR DRAW//
+    //cell.target.classList.add('cell-drawn');
     //cell.target.classList.remove('cell-new');
 }
 
